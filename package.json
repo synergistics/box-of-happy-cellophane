@@ -10,11 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
-    "ffmpeg": "0.0.4",
-    "opener": "^1.5.1",
-    "opusscript": "0.0.7",
     "selenium-webdriver": "^4.0.0-alpha.4",
-    "speaktome-node": "^0.2.0",
     "ws": "^7.1.1"
   }
 }

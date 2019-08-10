@@ -80,6 +80,7 @@ bot.on('message', message => {
 })
 
 bot.login(auth.token)
+    .catch(err => console.log("oops"))
 
 // async function example() {
 //   let driver = await new Builder().forBrowser('firefox').build();
