@@ -8,7 +8,8 @@ const {Builder, By, Key, until} = require('selenium-webdriver')
 
 const auth = require('./auth.json')
 
-const wss = new WebSocket.Server({ port: process.env.PORT })
+const port = process.env.PORT || 8080
+const wss = new ws.Server({ port })
 
 wss.on('connection', ws => {
     console.log('connected')    
@@ -32,9 +33,7 @@ bot.on('message', message => {
         let url = new URL(message.content)
         opener(message.content) 
     } 
-    catch (error) {
-        console.log(error)
-    }
+    catch (error) { /* not a url */ }
 
 
     // if (message.content.indexOf('!') === 0) {
@@ -53,15 +52,15 @@ bot.on('message', message => {
 
 bot.login(auth.token)
 
-async function example() {
-  let driver = await new Builder().forBrowser('firefox').build();
-  try {
-    await driver.get('http://www.google.com/ncr');
-    await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
-    await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
-  } finally {
-    // await driver.quit();
-  }
-}
+// async function example() {
+//   let driver = await new Builder().forBrowser('firefox').build();
+//   try {
+//     await driver.get('http://www.google.com/ncr');
+//     await driver.findElement(By.name('q')).sendKeys('webdriver', Key.RETURN);
+//     await driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+//   } finally {
+//     // await driver.quit();
+//   }
+// }
 
-example();
+// example();
