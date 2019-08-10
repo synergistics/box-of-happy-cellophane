@@ -2,7 +2,6 @@ const url = require('url')
 const ws = require('ws')
 
 const Discord = require('discord.js')
-const opener = require("opener");
 // const speech = require('speaktome-node')
 const webdriver = require('selenium-webdriver')
 const firefox = require('selenium-webdriver/firefox')
