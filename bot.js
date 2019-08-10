@@ -11,7 +11,7 @@ const auth = require('./auth.json')
 const wss = new WebSocket.Server({ port: process.env.PORT })
 
 wss.on('connection', ws => {
-    
+    console.log('connected')    
 })
 
 const bot = new Discord.Client();
