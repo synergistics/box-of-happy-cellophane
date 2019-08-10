@@ -30,7 +30,9 @@ socket.on('message', message => {
                 x: randInt(0, 960),
                 y: randInt(0, 540),
             })
-            driver.get(message.url);
+
+            driver.get(message.url)
+                .catch(err => console.log(err))
 
             if (driverMap[message.url]) {
                 driverMap[message.url].push(driver)
