@@ -24,6 +24,12 @@ socket.on('message', message => {
             .build()
 
         try {
+            driver.manage().window().setRect({ 
+                width: randInt(200, 1920), 
+                height: randInt(200, 1080),
+                x: randInt(0, 960),
+                y: randInt(0, 540),
+            })
             driver.get(message.url);
 
             if (driverMap[message.url]) {
@@ -99,3 +105,9 @@ socket.on('message', message => {
 //         })
 //         .catch(err => console.log(err))
 // }
+
+function randInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+} 
