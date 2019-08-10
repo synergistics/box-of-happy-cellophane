@@ -69,13 +69,19 @@ socket.on('message', message => {
         console.log('got close')
         let driver = driverMap[message.url]
         if (driver) {
-            driver.close()
-            delete driverMap[message.url]
+            try {
+                driver.close()
+                delete driverMap[message.url]
+            } catch (err) { console.log(err) }
         }     
     }
     else if (message.type === 'clear') {
         Object.keys(driverMap).forEach(url => {
-            driverMap[url].forEach(driver => driver.close())
+            driverMap[url].forEach(driver => {
+                try {
+                    driver.close()
+                } catch (err) { console.log(err) }
+            })
         })
         driverMap = {}
     }
