@@ -32,7 +32,7 @@ socket.on('message', message => {
             })
 
             driver.get(message.url)
-                .catch(err => console.log(err))
+                // .catch(err => console.log(err))
 
             if (driverMap[message.url]) {
                 driverMap[message.url].push(driver)
