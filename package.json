@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.5.1",
+    "reconnecting-websocket": "^4.1.10",
     "selenium-webdriver": "^4.0.0-alpha.4",
     "ws": "^7.1.1"
   }
